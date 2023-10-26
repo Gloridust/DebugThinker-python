@@ -1,12 +1,13 @@
 import requests
 import json
- 
+
 # API_KEY = "填充你应用的API Key"
 # SECRET_KEY = "填写你应用的Secret Key"
 # 从 config.py 引入
 from config import API_KEY,SECRET_KEY  # 导入密钥
  
 context = input("请输入提问内容：")
+print("正在处理中，请稍后...")
 
 def main():
     url = "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/completions?access_token=" + get_access_token()
