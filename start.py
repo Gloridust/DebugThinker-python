@@ -4,8 +4,10 @@ import json
 # API_KEY = "填充你应用的API Key"
 # SECRET_KEY = "填写你应用的Secret Key"
 # 从 config.py 引入
-from config import API_KEY, SECRET_KEY  # 导入密钥
+from config import API_KEY,SECRET_KEY  # 导入密钥
  
+context = input("请输入提问内容：")
+
 def main():
     url = "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/completions?access_token=" + get_access_token()
  
@@ -13,7 +15,7 @@ def main():
         "messages": [
             {
                 "role": "user",
-                "content": "你要询问AI的内容"
+                "content": context
             },
  
         ]
