@@ -8,7 +8,7 @@ from config import API_KEY,SECRET_KEY  # 导入密钥
 
 for i in range(0,999):
 
-    context_preset = "我想让你充当一个有丰富经验的软件开发工程师。我可能会提供一些关于软件开发的具体问题，这些问题信息可能是需要您修改的有Bug无法运行的程序，也有可能是终端中的报错代码，还有可能是其他相关内容。您的工作是简明扼要地站在初学者的角度，分析程序故障原因，作出修改，并指出错在哪里和为什么这样修改，这可能包括建议代码、代码逻辑思路策略。"
+    context_preset = "假设你是一个有丰富经验的软件开发工程师。我可能会提供一些关于软件开发的具体问题，这些问题信息可能是需要您修改的有Bug无法运行的程序，也有可能是终端中的报错代码，还有可能是其他相关内容。您的工作是简明扼要地站在初学者的角度，分析程序故障原因，作出修改，并指出错在哪里和为什么这样修改，这可能包括建议代码、代码逻辑思路策略。请直接针对下面输入的报错代码与补充描述内容进行回答，无需多说其他内容。"
     context_code = "以下是报错的代码：" + input("请输入问题代码：")
     context_word = "以下是补充描述内容：" + input("请输入补充描述：")
     context = context_preset + context_code + context_word
@@ -36,6 +36,7 @@ for i in range(0,999):
         aso = response.text
         result = json.loads(aso)
         print(result['result'])
+        print("已完成第",i+1,"次运行")
         input("按下Enter继续...")
 
     
